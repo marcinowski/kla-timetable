@@ -21,9 +21,12 @@ class Result(object):
     def __repr__(self):
         return "<Result object> from: {}, expires: {}".format(self.since, self.expires)
 
-    # todo: serialization to json
+    # todo: serialization to json (overriding JSONEncoder)
     def to_dict(self):
         return {'since': self.since, 'expires': self.expires, 'lines': [l.to_dict() for l in self.lines]}
+
+    def from_json(self):
+        pass  # todo: deserialization from json
 
 
 class Line(object):

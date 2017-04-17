@@ -31,6 +31,9 @@ class KLATimeTableFetcher(object):
         self._back_up_results()
         return self.result
 
+    def fetch_from_json_backup(self):
+        return Result.from_json()
+
     def get_main_timetable_page(self):
         """
         Class fetching data from the main timetable view
